@@ -3,6 +3,8 @@
 import { useState } from "react";
 
 import styles from "./Form.module.css";
+import { Button1 } from "./Button1";
+import { useNavigate } from "react-router-dom";
 
 export function convertToEmoji(countryCode) {
   const codePoints = countryCode
@@ -18,6 +20,17 @@ function Form() {
   const [date, setDate] = useState(new Date());
   const [notes, setNotes] = useState("");
 
+  const navigation = useNavigate();
+
+  const clickbutton = (e) => {
+    e.preventDefault();
+    console.log("we good homie");
+  };
+
+  const backButton = (e) => {
+    e.preventDefault();
+    navigation(-2);
+  };
   return (
     <form className={styles.form}>
       <div className={styles.row}>
@@ -49,8 +62,12 @@ function Form() {
       </div>
 
       <div className={styles.buttons}>
-        <button>Add</button>
-        <button>&larr; Back</button>
+        <Button1 onClick={clickbutton} type={"primary"}>
+          Add
+        </Button1>
+        <Button1 onClick={backButton} type={"back"}>
+          &larr; Back
+        </Button1>
       </div>
     </form>
   );
