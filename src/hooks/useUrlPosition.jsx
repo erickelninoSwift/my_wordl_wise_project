@@ -1,8 +1,15 @@
 import { useSearchParams } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
 export const useUrlPosition = () => {
   const [searchParams] = useSearchParams();
   const mapLat = searchParams.get("lat");
-  const mapLong = searchParams.get("lng");
-  return [mapLat, mapLong];
+  const mapLng = searchParams.get("lng");
+  const [cityLocation, setCityLocation] = useState([]);
+
+  useEffect(() => {
+    setCityLocation(() => [mapLat, mapLng]);
+  }, [mapLat, mapLng]);
+
+  return { mapLat, mapLng, cityLocation };
 };

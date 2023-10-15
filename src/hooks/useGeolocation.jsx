@@ -1,18 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function useGeolocation(defaultPosition = null) {
   const [isLoading, setIsLoading] = useState(false);
-  const [position, setPosition] = useState({});
-  const [error, setError] = useState(null);
 
-  function getPosition() {
+  const [error, setError] = useState(null);
+  const [erickLocation, setErickLocation] = useState({});
+  const [jackpot, setJackpot] = useState([]);
+
+  function getErickPosition() {
     if (!navigator.geolocation)
       return setError("Your browser does not support geolocation");
 
     setIsLoading(true);
     navigator.geolocation.getCurrentPosition(
       (pos) => {
-        setPosition({
+        setErickLocation({
           lat: pos.coords.latitude,
           lng: pos.coords.longitude,
         });
@@ -24,6 +26,9 @@ export function useGeolocation(defaultPosition = null) {
       }
     );
   }
+  useEffect(() => {
+    setJackpot(() => [erickLocation.lat, erickLocation.lng]);
+  }, [erickLocation.lat, erickLocation.lng]);
 
-  return { isLoading, position, error, getPosition };
+  return { isLoading, jackpot, error, getErickPosition };
 }

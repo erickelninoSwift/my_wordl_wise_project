@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Map.module.css";
 import { useCities } from "../context/CitiesContext";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useUrlPosition } from "../hooks/useUrlPosition";
+
 import {
   MapContainer,
   TileLayer,
@@ -12,43 +14,44 @@ import {
 } from "react-leaflet";
 import { useGeolocation } from "../hooks/useGeolocation";
 import { Button1 } from "./Button1";
-import { useUrlPosition } from "../hooks/useUrlPosition";
+import { map } from "leaflet";
+
 export const Map = () => {
+  const { allMyCities } = useCities();
+  const [MapPosition, setMapPosition] = useState([40, 0]);
+  const [otherLocation, setOtherlocation] = useState([]);
+  const { mapLat, mapLng, cityLocation } = useUrlPosition();
+
   const {
     isLoading: isLoadingPosition,
-    position: geolocationPosition,
-    getPosition,
+    jackpot,
+    getErickPosition,
   } = useGeolocation();
 
-  const [MapPosition, setMapPosition] = useState([40, 0]);
-  const [mapLat, mapLong] = useUrlPosition();
-
-  const { allMyCities } = useCities();
-
   useEffect(() => {
-    if (mapLat && mapLong) {
-      setMapPosition([mapLat, mapLong]);
-    }
-  }, [mapLat, mapLong]);
-
-  useEffect(() => {
-    if (geolocationPosition) {
-      setMapPosition([
-        geolocationPosition.lat || mapLat,
-        geolocationPosition.lng || mapLong,
+    if (cityLocation[0] !== null) {
+      setMapPosition(() => [
+        parseFloat(cityLocation[0]),
+        parseFloat(cityLocation[1]),
       ]);
     }
-  }, [geolocationPosition]);
-  console.log(geolocationPosition);
+  }, [cityLocation[0], cityLocation[1]]);
+
+  useEffect(() => {
+    if (jackpot[0] !== undefined) {
+      setOtherlocation([parseFloat(jackpot[0]), parseFloat(jackpot[1])]);
+    }
+  }, [jackpot]);
+
   return (
     <div className={styles.mapContainer}>
-      <Button1 type={"position"} onClick={getPosition}>
+      <Button1 type={"position"} onClick={getErickPosition}>
         {isLoadingPosition ? "Loading..." : "Use your Position"}
       </Button1>
 
       <MapContainer
         className={styles.map}
-        center={MapPosition}
+        center={MapPosition[0] !== undefined ? MapPosition : jackpot}
         zoom={6}
         scrollWheelZoom={true}
       >
@@ -67,11 +70,28 @@ export const Map = () => {
             </Marker>
           );
         })}
-        <GetCenterMap position={MapPosition} />
+
+        <GetCenterMap
+          position={
+            (MapPosition[0] > 0
+              ? MapPosition
+              : cityLocation[0] !== null &&
+                cityLocation[1] !== null &&
+                cityLocation) || [jackpot[0] || 40, jackpot[1] || 0]
+          }
+        />
         <DetectClick />
       </MapContainer>
     </div>
   );
+};
+
+const GetCenterMap = ({ position }) => {
+  const map = useMap();
+  if (position) {
+    map.setView(position);
+  }
+  return null;
 };
 
 const DetectClick = () => {
@@ -79,15 +99,8 @@ const DetectClick = () => {
   useMapEvent({
     click: (e) => {
       const { lat, lng } = e.latlng;
-      console.log(lat);
-      console.log(lng);
+
       return navigation(`form?lat=${lat}&lng=${lng}`);
     },
   });
-};
-
-const GetCenterMap = ({ position }) => {
-  const map = useMap();
-  map.setView(position, 12);
-  return null;
 };

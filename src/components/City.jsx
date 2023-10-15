@@ -27,9 +27,6 @@ export function City() {
 
   // TEMP DATA
 
-  const backButton = () => {
-    console.log("nack button");
-  };
   const { cityName, emoji, date, notes } = currentCity;
   if (isloading) return <Spinner />;
   return (

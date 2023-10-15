@@ -8,8 +8,7 @@ export const CityItem = ({ myCity }) => {
   const { cityName, emoji, date, position, id } = myCity;
   const { lat, lng } = position;
   const { currentCity } = useCities();
-  const { id: currentID } = currentCity;
-  console.log(currentID);
+
   return (
     <li>
       <Link
