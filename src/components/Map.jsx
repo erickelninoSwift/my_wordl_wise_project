@@ -20,7 +20,7 @@ export const Map = () => {
   const { allMyCities } = useCities();
   const [MapPosition, setMapPosition] = useState([40, 0]);
   const [otherLocation, setOtherlocation] = useState([]);
-  const { mapLat, mapLng, cityLocation } = useUrlPosition();
+  const { cityLocation } = useUrlPosition();
 
   const {
     isLoading: isLoadingPosition,

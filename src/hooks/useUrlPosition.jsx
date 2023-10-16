@@ -11,5 +11,5 @@ export const useUrlPosition = () => {
     setCityLocation(() => [mapLat, mapLng]);
   }, [mapLat, mapLng]);
 
-  return { mapLat, mapLng, cityLocation };
+  return { cityLocation };
 };
