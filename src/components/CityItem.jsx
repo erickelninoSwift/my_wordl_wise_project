@@ -7,7 +7,12 @@ import { useCities } from "../context/CitiesContext";
 export const CityItem = ({ myCity }) => {
   const { cityName, emoji, date, position, id } = myCity;
   const { lat, lng } = position;
-  const { currentCity } = useCities();
+  const { currentCity, deleteCity } = useCities();
+
+  const handleDelete = (e) => {
+    e.preventDefault();
+    deleteCity(id);
+  };
 
   return (
     <li>
@@ -20,7 +25,9 @@ export const CityItem = ({ myCity }) => {
         <span className={styles.emoji}>{emoji}</span>
         <h3 className={styles.name}>{cityName}</h3>
         <Time currentTime={date} />
-        <button className={styles.deleteBtn}>&times;</button>
+        <button className={styles.deleteBtn} onClick={handleDelete}>
+          &times;
+        </button>
       </Link>
     </li>
   );

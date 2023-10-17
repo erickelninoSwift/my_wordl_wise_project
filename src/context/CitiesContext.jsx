@@ -54,7 +54,24 @@ const CitiesProvider = ({ children }) => {
         return [...allMyCities, data];
       });
     } catch (err) {
-      console.log("error found");
+      console.log("error found while creating the city");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const deleteCity = async (id) => {
+    try {
+      setIsLoading(true);
+      await fetch(`${BASE_URL}/cities/${id}`, {
+        method: "DELETE",
+      });
+
+      setCities(() => {
+        return allMyCities.filter((currentcity) => currentcity.id !== id);
+      });
+    } catch (err) {
+      console.log("There was an error while trying to delete the city");
     } finally {
       setIsLoading(false);
     }
@@ -68,6 +85,7 @@ const CitiesProvider = ({ children }) => {
         currentCity,
         getCurrentCity,
         createCity,
+        deleteCity,
       }}
     >
       {children}

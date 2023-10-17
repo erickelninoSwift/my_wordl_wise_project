@@ -34,6 +34,7 @@ function Form() {
   const navigation = useNavigate();
   const [geoCodingError, setGeoCodingError] = useState("");
   const { createCity, isloading } = useCities();
+  const naviation = useNavigate();
 
   const clickbutton = (e) => {
     e.preventDefault();
@@ -45,7 +46,7 @@ function Form() {
     navigation(-2);
   };
 
-  const handleSubmitbutton = (e) => {
+  const handleSubmitbutton = async (e) => {
     e.preventDefault();
     if (!cityName && !startDate) return;
     const currentID = uuidv4();
@@ -60,7 +61,8 @@ function Form() {
     };
 
     console.log(newCity);
-    createCity(newCity);
+    await createCity(newCity);
+    naviation("/App/cities");
   };
   useEffect(() => {
     if (cityLocation.length === 0) return;
