@@ -63,7 +63,7 @@ const CitiesProvider = ({ children }) => {
   const deleteCity = async (id) => {
     try {
       setIsLoading(true);
-      await fetch(`${BASE_URL}/cities/${id}`, {
+      await fetch(`${BASE_URL}/${id}`, {
         method: "DELETE",
       });
 
