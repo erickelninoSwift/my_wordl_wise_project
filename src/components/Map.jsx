@@ -80,7 +80,7 @@ export const Map = () => {
                 cityLocation) || [jackpot[0] || 40, jackpot[1] || 0]
           }
         />
-        <DetectClick />
+        {cityLocation.length > 0 && <DetectClick />}
       </MapContainer>
     </div>
   );
@@ -99,7 +99,6 @@ const DetectClick = () => {
   useMapEvent({
     click: (e) => {
       const { lat, lng } = e.latlng;
-
       return navigation(`form?lat=${lat}&lng=${lng}`);
     },
   });

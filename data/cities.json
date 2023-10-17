@@ -35,6 +35,42 @@
         "lng": 13.376933665713324
       },
       "id": 98443197
+    },
+    {
+      "cityName": "Zaragoza",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2023-10-17T01:23:10.546Z",
+      "notes": "More money ",
+      "position": {
+        "lat": "41.73786983088759",
+        "lng": "-0.9437864290006438"
+      },
+      "id": "11580d8b-3ae8-4f28-963c-da6da528d39e"
+    },
+    {
+      "cityName": "Kinshasa",
+      "country": "Congo (the Democratic Republic of the)",
+      "emoji": "🇨🇩",
+      "date": "2023-10-17T01:42:36.890Z",
+      "notes": "my country",
+      "position": {
+        "lat": "-4.3465668825734225",
+        "lng": "15.354771222922556"
+      },
+      "id": "fdd235b4-8ced-48dc-ba51-b69c8d6730d0"
+    },
+    {
+      "cityName": "Rustenburg",
+      "country": "South Africa",
+      "emoji": "🇿🇦",
+      "date": "2023-10-17T01:43:59.225Z",
+      "notes": "Rusty dusty",
+      "position": {
+        "lat": "-25.67149804095645",
+        "lng": "27.2410157482336"
+      },
+      "id": "5a9c8040-7184-44c8-8f2b-8cc9ef1d5329"
     }
   ]
 }
