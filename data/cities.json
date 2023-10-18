@@ -1,18 +1,6 @@
 {
   "cities": [
     {
-      "cityName": "Carrion de Calatrava",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2023-10-21T07:57:10.000Z",
-      "notes": "I am going there very soon",
-      "position": {
-        "lat": "39.06076242947541",
-        "lng": "-3.8667056854510022"
-      },
-      "id": "c9c5c09f-1b14-4767-896d-1deacb094885"
-    },
-    {
       "cityName": "Toulouse",
       "country": "France",
       "emoji": "🇫🇷",
@@ -23,6 +11,18 @@
         "lng": "1.4067027846780713"
       },
       "id": "97f3c491-bddd-45b5-a81d-bbbc8dd1c37f"
+    },
+    {
+      "cityName": "Albacete",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2023-10-18T08:05:46.066Z",
+      "notes": "I will visit next week",
+      "position": {
+        "lat": "38.9827731194858",
+        "lng": "-1.840102706141396"
+      },
+      "id": "a4717888-fee2-402f-8c79-e7e942f95d36"
     }
   ]
 }

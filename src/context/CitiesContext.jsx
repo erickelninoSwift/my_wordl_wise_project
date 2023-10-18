@@ -25,6 +25,7 @@ const reducer = (currentState, action) => {
       ...currentState,
       allMyCities: [...currentState.allMyCities, action.payload],
       isLoading: false,
+      currentCity: action.payload,
     };
   }
 
