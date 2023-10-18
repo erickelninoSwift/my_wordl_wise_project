@@ -1,18 +1,6 @@
 {
   "cities": [
     {
-      "cityName": "Kinshasa",
-      "country": "Congo (the Democratic Republic of the)",
-      "emoji": "🇨🇩",
-      "date": "2023-10-17T01:42:36.890Z",
-      "notes": "my country",
-      "position": {
-        "lat": "-4.3465668825734225",
-        "lng": "15.354771222922556"
-      },
-      "id": "fdd235b4-8ced-48dc-ba51-b69c8d6730d0"
-    },
-    {
       "cityName": "Rustenburg",
       "country": "South Africa",
       "emoji": "🇿🇦",
@@ -23,18 +11,6 @@
         "lng": "27.2410157482336"
       },
       "id": "5a9c8040-7184-44c8-8f2b-8cc9ef1d5329"
-    },
-    {
-      "cityName": "Lusaka",
-      "country": "Zambia",
-      "emoji": "🇿🇲",
-      "date": "2023-10-17T01:48:23.453Z",
-      "notes": "lusaka",
-      "position": {
-        "lat": "-15.416995072893819",
-        "lng": "28.318161860250832"
-      },
-      "id": "b5a1a98f-e0d4-4d9b-9509-d948c7ada9da"
     }
   ]
 }
