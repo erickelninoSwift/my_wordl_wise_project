@@ -1,10 +1,10 @@
 import React from "react";
-import { btn } from "./Button.module.css";
+import styles from "./Button.module.css";
 
-export const Button = () => {
+export const Button = ({ onclick }) => {
   return (
-    <div>
-      <button>Login</button>
-    </div>
+    <button className={`${styles.btn} ${styles.primary}`} onClick={onclick}>
+      Login
+    </button>
   );
 };

@@ -1,13 +1,28 @@
 import { login, form, row } from "./Login.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { PageNavigation } from "../components/PageNavigation";
 import { Button } from "../components/Button";
 import { Link } from "react-router-dom";
-
+import { useAuth } from "../context/FakeAuthContext";
+import { useNavigate } from "react-router-dom";
 export const Login = () => {
+  const navigation = useNavigate();
+
   // PRE-FILL FOR DEV PURPOSES
   const [email, setEmail] = useState("jack@example.com");
   const [password, setPassword] = useState("qwerty");
+  const { isAuthenticated, loginUser, userError, user } = useAuth();
+
+  const handleLogin = () => {
+    if (!email && !password) return;
+    loginUser(email, password);
+  };
+
+  useEffect(() => {
+    if (!isAuthenticated) return;
+    navigation("/App", { replace: true });
+    console.log(user);
+  }, [isAuthenticated, navigation]);
 
   return (
     <main className={login}>
@@ -32,8 +47,8 @@ export const Login = () => {
             value={password}
           />
         </div>
-        <Link to="/App">
-          <Button />
+        <Link>
+          <Button onclick={handleLogin} />
         </Link>
       </form>
     </main>

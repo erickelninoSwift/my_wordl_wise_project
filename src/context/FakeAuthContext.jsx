@@ -1,7 +1,7 @@
 import { createContext, useContext, useReducer } from "react";
 
 const FAKE_USER = {
-  name: "Jack",
+  name: "Erick",
   email: "jack@example.com",
   password: "qwerty",
   avatar: "https://i.pravatar.cc/100?u=zz",
@@ -33,7 +33,7 @@ const reducer = (initialState, action) => {
 };
 
 const AuthContextProvider = ({ children }) => {
-  const [{ user, isAuthanticated, userError }, dispatch] = useReducer(
+  const [{ user, isAuthenticated, userError }, dispatch] = useReducer(
     reducer,
     initialState
   );
@@ -51,7 +51,7 @@ const AuthContextProvider = ({ children }) => {
   };
   return (
     <AuthContext.Provider
-      value={{ user, isAuthanticated, loginUser, logOut, userError, dispatch }}
+      value={{ user, isAuthenticated, loginUser, logOut, userError, dispatch }}
     >
       {children}
     </AuthContext.Provider>

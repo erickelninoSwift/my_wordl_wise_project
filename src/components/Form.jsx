@@ -43,7 +43,7 @@ function Form() {
 
   const backButton = (e) => {
     e.preventDefault();
-    navigation(-2);
+    navigation(-1);
   };
 
   const handleSubmitbutton = async (e) => {

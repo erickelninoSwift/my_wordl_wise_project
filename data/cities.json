@@ -23,6 +23,18 @@
         "lng": "-1.840102706141396"
       },
       "id": "a4717888-fee2-402f-8c79-e7e942f95d36"
+    },
+    {
+      "cityName": "Reading",
+      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "emoji": "🇬🇧",
+      "date": "2023-10-18T19:54:02.384Z",
+      "notes": "",
+      "position": {
+        "lat": "51.45078345260186",
+        "lng": "-0.9590179368044894"
+      },
+      "id": "e7a79b43-a5de-4258-90b8-fc126bd284bf"
     }
   ]
 }
