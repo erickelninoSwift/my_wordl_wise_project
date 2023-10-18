@@ -40,6 +40,7 @@ const reducer = (currentState, action) => {
         (currentcity) => currentcity.id !== action.payload
       ),
       isLoading: false,
+      currentCity: {},
     };
   }
 
@@ -74,6 +75,7 @@ const CitiesProvider = ({ children }) => {
   }, []);
 
   const getCurrentCity = async (id) => {
+    if (id === currentCity.id) return;
     try {
       dispatch({ type: "loading" });
       const response = await fetch(`${BASE_URL}/${id}`);
