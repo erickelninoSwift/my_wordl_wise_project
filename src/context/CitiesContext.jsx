@@ -23,7 +23,7 @@ const reducer = (currentState, action) => {
   if (action.type === "CITIES_CREATED") {
     return {
       ...currentState,
-      allMyCities: [...currentState.allMyCities, payload],
+      allMyCities: [...currentState.allMyCities, action.payload],
       isLoading: false,
     };
   }
@@ -128,6 +128,7 @@ const CitiesProvider = ({ children }) => {
         createCity,
         deleteCity,
         error,
+        dispatch,
       }}
     >
       {children}

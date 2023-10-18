@@ -40,6 +40,7 @@ export const Map = () => {
   useEffect(() => {
     if (jackpot[0] !== undefined) {
       setOtherlocation([parseFloat(jackpot[0]), parseFloat(jackpot[1])]);
+      setMapPosition(() => otherLocation);
     }
   }, [jackpot]);
 

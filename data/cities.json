@@ -1,16 +1,28 @@
 {
   "cities": [
     {
-      "cityName": "Rustenburg",
-      "country": "South Africa",
-      "emoji": "🇿🇦",
-      "date": "2023-10-17T01:43:59.225Z",
-      "notes": "Rusty dusty",
+      "cityName": "Carrion de Calatrava",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2023-10-21T07:57:10.000Z",
+      "notes": "I am going there very soon",
       "position": {
-        "lat": "-25.67149804095645",
-        "lng": "27.2410157482336"
+        "lat": "39.06076242947541",
+        "lng": "-3.8667056854510022"
       },
-      "id": "5a9c8040-7184-44c8-8f2b-8cc9ef1d5329"
+      "id": "c9c5c09f-1b14-4767-896d-1deacb094885"
+    },
+    {
+      "cityName": "Toulouse",
+      "country": "France",
+      "emoji": "🇫🇷",
+      "date": "2023-10-18T07:58:16.383Z",
+      "notes": "Jaime la france",
+      "position": {
+        "lat": "43.61202425500191",
+        "lng": "1.4067027846780713"
+      },
+      "id": "97f3c491-bddd-45b5-a81d-bbbc8dd1c37f"
     }
   ]
 }
