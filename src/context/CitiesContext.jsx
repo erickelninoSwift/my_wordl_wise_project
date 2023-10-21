@@ -2,8 +2,8 @@ import {
   createContext,
   useContext,
   useEffect,
+  useMemo,
   useReducer,
-  useState,
 } from "react";
 
 const currentState = {
@@ -121,21 +121,21 @@ const CitiesProvider = ({ children }) => {
     }
   };
 
+  const value = useMemo(() => {
+    return {
+      allMyCities,
+      isloading,
+      currentCity,
+      getCurrentCity,
+      createCity,
+      deleteCity,
+      error,
+      dispatch,
+    };
+  }, [allMyCities]);
+
   return (
-    <CitiesContext.Provider
-      value={{
-        allMyCities,
-        isloading,
-        currentCity,
-        getCurrentCity,
-        createCity,
-        deleteCity,
-        error,
-        dispatch,
-      }}
-    >
-      {children}
-    </CitiesContext.Provider>
+    <CitiesContext.Provider value={value}>{children}</CitiesContext.Provider>
   );
 };
 

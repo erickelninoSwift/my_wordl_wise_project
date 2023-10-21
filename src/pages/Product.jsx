@@ -1,7 +1,7 @@
 import { PageNavigation } from "../components/PageNavigation";
 import styles from "./Product.module.css";
 
-export const Product = () => {
+export default function Product() {
   return (
     <main className={styles.product}>
       <PageNavigation />
@@ -27,4 +27,4 @@ export const Product = () => {
       </section>
     </main>
   );
-};
+}

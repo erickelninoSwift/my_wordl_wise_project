@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import styles from "./Homepage.module.css";
 import { PageNavigation } from "../components/PageNavigation";
 
-export function Homepage() {
+export default function Homepage() {
   return (
     <main className={styles.homepage}>
       <PageNavigation />

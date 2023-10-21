@@ -35,6 +35,42 @@
         "lng": "-0.9590179368044894"
       },
       "id": "e7a79b43-a5de-4258-90b8-fc126bd284bf"
+    },
+    {
+      "cityName": "Pretoria",
+      "country": "South Africa",
+      "emoji": "🇿🇦",
+      "date": "2023-10-20T19:54:03.225Z",
+      "notes": "my town",
+      "position": {
+        "lat": "-25.777891481358715",
+        "lng": "28.325235103469765"
+      },
+      "id": "fb5f6365-80cb-41f4-8a38-c3651e5658bb"
+    },
+    {
+      "cityName": "Pretoria",
+      "country": "South Africa",
+      "emoji": "🇿🇦",
+      "date": "2023-10-20T19:54:03.225Z",
+      "notes": "my town",
+      "position": {
+        "lat": "-25.777891481358715",
+        "lng": "28.325235103469765"
+      },
+      "id": "b5156991-ae44-4bb8-9696-355063269190"
+    },
+    {
+      "cityName": "Pretoria",
+      "country": "South Africa",
+      "emoji": "🇿🇦",
+      "date": "2023-10-21T22:17:51.438Z",
+      "notes": "Home town",
+      "position": {
+        "lat": "-25.74673044308793",
+        "lng": "28.193647806759284"
+      },
+      "id": "8ed04b68-8f86-4be7-b56d-a7670846ae38"
     }
   ]
 }

@@ -5,13 +5,13 @@ import { Button } from "../components/Button";
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/FakeAuthContext";
 import { useNavigate } from "react-router-dom";
-export const Login = () => {
+export default function Login() {
   const navigation = useNavigate();
 
   // PRE-FILL FOR DEV PURPOSES
   const [email, setEmail] = useState("jack@example.com");
   const [password, setPassword] = useState("qwerty");
-  const { isAuthenticated, loginUser, userError, user } = useAuth();
+  const { isAuthenticated, loginUser, user } = useAuth();
 
   const handleLogin = () => {
     if (!email && !password) return;
@@ -20,7 +20,7 @@ export const Login = () => {
 
   useEffect(() => {
     if (!isAuthenticated) return;
-    navigation("/App", { replace: true });
+    navigation("/App");
     console.log(user);
   }, [isAuthenticated, navigation]);
 
@@ -53,4 +53,4 @@ export const Login = () => {
       </form>
     </main>
   );
-};
+}
